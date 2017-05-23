@@ -7,6 +7,9 @@ compile: python setup.py py2exe (+ add font and background)
 
 from copy import deepcopy # http://www.wellho.net/resources/ex.php4?item=y111/deepcop.py
 import random # http://effbot.org/pyfaq/how-do-i-generate-random-numbers-in-python.htm
+import matlab.engine
+import time
+import serial
 
 # gui imports
 import pygame # import pygame package
@@ -15,6 +18,7 @@ from sys import exit # import exit function
 
 ######################## VARIABLES ########################
 
+matlab = matlab.engine.start_matlab()
 turn = 'white' # keep track of whose turn it is
 selected = (0, 1) # a tuple keeping track of which piece is selected
 board = 0 # link to our 'main' board
@@ -82,6 +86,9 @@ def init_player(type, color, strategy, ply_depth):
 	return Player(type, color, strategy, ply_depth)
 
 ######################## FUNCTIONS ########################
+def get_board(board)
+    
+
 
 # will return array with available moves to the player on board
 def avail_moves(board, player):
